@@ -1,0 +1,112 @@
+# Kimberly Urquiza
+# 10/15/2024
+# Assignment 3
+
+# Remember to comment for each function
+
+# function to print "Hello World"
+def print_hello():
+    # TODO: Print "Hello World"
+    print("Hello World")
+    pass
+
+# Function to greet the user by their name
+def hello_user(name):
+    # TODO: Print "Hello, their_name"
+    print(f"Hello, {name}!")
+    pass
+
+# Function to cpmpute the area of a circle
+def get_circle_area(radius):
+    # TODO: print a message back with the answer
+    pi = 3.14 # Define the value of pi
+    area = pi * radius ** 2 # Are formula πr^2
+    print(f"The area of the citcle with radius {radius} is {area:.2f}.")
+    pass
+
+#function to compute the MPG for a car
+def get_miles_per_galoon(miles, gallons):
+    # TODO: print out the MPG for the car
+    if gallons == 0: # Check to avoid division by 0 
+        return
+    mpg = miles / gallons #calculate MPG
+    print(f"the car's MPG is {mpg: .2f}.")
+    pass
+
+# funtion to convert Fehrenheit to Celsius
+def convert_temperature(temperature_F):
+    # TODO: return the coverted temperature in Celcius
+    temperature_C = (temperature_F - 32) * 5/9 # conversion formula
+    return temperature_C  # return the converted temp
+    pass
+
+# function to determine the return day after a holiday
+def problem_7(starting_day, length_of_stay):
+    # TODO: Implement the function as the problem statement
+    return_day = (starting_day + length_of_stay) % 7 # calculate the return day
+    return return_day # return the day of the week
+    pass
+
+# Print leap years from 1900 to 2100 
+def extra_credit_problem_1():
+    start_year = 1900
+    end_year = 2100
+    # TODO: Write a program to print leap years from the year 1900 to 2100
+    # 5 points extra credits
+    print("Leap years from 1900 to 2100:")
+    for year in range(start_year, end_year + 1):
+        if (year % 4 == 0 and year % 100 != 0) or (year% 400 ==0):
+            print(year) # Print the leap years
+    pass
+
+# cheak if a number is prime
+def extra_credit_problem_2(n):
+    # a prime number is a natural number greater than 1, that can only divisible by itself and 1
+    # 10 points extra credits
+    # TODO: given the number n, check if n is a prime number
+    if n <= 1:
+        return False # 0 and 1 are not prime numbers
+    for i in range (2, int(n ** 0.5)+ 1):
+        if n % i == 0:
+            return False # n is divisible by i, not a prime
+        return True # n is a prime
+    pass
+
+
+def main():
+    print_hello()
+    # prompt user to get the input then call functions
+    # ...
+    name = input("What is your name? ")
+    hello_user(name)
+
+    radius = float(input("Enter the radius of the circle: "))
+    get_circle_area(radius)
+
+    miles = float(input("Enter the number of miles driven: "))
+    gallons = float(input("Enter the number of gallons used: "))
+    get_miles_per_galoon(miles, gallons)
+
+    temperature_F = float(input("Enter tempeture in degree Fehrenheit: "))
+    temperature_C = convert_temperature(temperature_F)
+    print(f"{temperature_F} degree Fehrenheit is equal to {temperature_C: .2f} degrees Celsius")
+
+    starting_day = int(input("Enter the starting day number (0=Sunday, 6=Saturday): "))
+    length_of_stay = int(input("Enter the length of your stay in nights: "))
+    return_day = problem_7(starting_day, length_of_stay)
+    print(f"You will return on day {return_day}.")
+
+    extra_credit_problem_1()
+    n = int(input("Enter a number to check if it is prime: "))
+    if extra_credit_problem_2(n):
+        print(f"{n} is a prime number.")
+    else:
+        print(f"{n} is not a prime number.")
+
+if __name__ == "__main__":
+    main()
+
+
+    
+
+
